@@ -2,7 +2,7 @@
 
 This is a test project to show abilities in Python, Django and Rest apis:
 The Main Idea is to create a rest api interface for CRUD movies information.
-relating Persons with Movies, persons will be the directors, actors and producers of movies:
+Relating Persons with Movies, persons will be the directors, actors and producers of movies:
 
 * The content (Movies an Persons) can only be added/updated/deleted if User is logged in.
 * The content can be obtained with out being logged in
@@ -170,7 +170,10 @@ Content can be deleted if user is logged in:
 curl -X DELETE http://ec2-34-226-248-137.compute-1.amazonaws.com/movies/1/ -H 'Content-Type: application/json' -H 'Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJfaWQiOjEsImV4cCI6MTUyNjg0MzgzMiwidXNlcm5hbWUiOiJhZG1pbiJ9.T5_Q4-_X9kmWKSkhfWoZGiBQnQhqGeLtxMr0-E5fyMo'
 ```
 
-The technologies used here are:
+
+## Techonology
+
+The main technologies used here are:
 * Django: Framework for creating web services
 * Django Rest Framework: Framework used to create rest apis interfaces
 * Django rest JWT: Jwt  implementation for rest framework, used for authentication. For more info about jwt: https://jwt.io/introduction/
