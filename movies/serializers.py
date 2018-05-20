@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from movies.models import Movie, Person
-from movies.utils import to_roman
+from utils import to_roman
 
 
 class PersonSerializer(serializers.ModelSerializer):

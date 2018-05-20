@@ -2,7 +2,7 @@ import json
 
 from django.db import models
 
-from movies.utils import to_roman
+from utils import to_roman
 
 
 class Movie(models.Model):
