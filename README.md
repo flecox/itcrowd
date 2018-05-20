@@ -53,12 +53,12 @@ curl -X POST -H 'Content-Type: application/json' -H 'Authorization: JWT eyJ0eXAi
 
 We can create a movie, we need to have the person's id to be able to add it to a movie:
 ```
-curl -X POST http://ec2-34-226-248-137.compute-1.amazonaws.com/movies/ -d '{"release_year": 2020, "title": "The Great Stoner Rock Movie", "actors": [2], "producers": [2], "directors": [1, 2]}' -H 'Content-Type: application/json' -H 'Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJfaWQiOjEsImV4cCI6MTUyNjg0MzgzMiwidXNlcm5hbWUiOiJhZG1pbiJ9.T5_Q4-_X9kmWKSkhfWoZGiBQnQhqGeLtxMr0-E5fyMo'
+curl -X POST http://ec2-34-226-248-137.compute-1.amazonaws.com/movies/ -d '{"release_year": 2018, "title": "The Great Stoner Rock Movie", "actors": [2], "producers": [2], "directors": [1, 2]}' -H 'Content-Type: application/json' -H 'Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInVzZXJfaWQiOjEsImV4cCI6MTUyNjg0MzgzMiwidXNlcm5hbWUiOiJhZG1pbiJ9.T5_Q4-_X9kmWKSkhfWoZGiBQnQhqGeLtxMr0-E5fyMo'
 
 {
   "id": 1,
   "title": "The Great Stoner Rock Movie",
-  "release_year": 2020,
+  "release_year": 'MMXVIII',
   "directors": [
     {
       "id": 1,
@@ -69,7 +69,7 @@ curl -X POST http://ec2-34-226-248-137.compute-1.amazonaws.com/movies/ -d '{"rel
         "Josh"
       ],
       "directed": [
-        "The Great Stoner Rock Movie(2020)"
+        "The Great Stoner Rock Movie(MMXVIII)"
       ],
       "produced": [],
       "acted": []
@@ -83,13 +83,13 @@ curl -X POST http://ec2-34-226-248-137.compute-1.amazonaws.com/movies/ -d '{"rel
         "Josh"
       ],
       "directed": [
-        "The Great Stoner Rock Movie(2020)"
+        "The Great Stoner Rock Movie(MMXVIII)"
       ],
       "produced": [
-        "The Great Stoner Rock Movie(2020)"
+        "The Great Stoner Rock Movie(MMXVIII)"
       ],
       "acted": [
-        "The Great Stoner Rock Movie(2020)"
+        "The Great Stoner Rock Movie(MMXVIII)"
       ]
     }
   ],
@@ -103,13 +103,13 @@ curl -X POST http://ec2-34-226-248-137.compute-1.amazonaws.com/movies/ -d '{"rel
         "Josh"
       ],
       "directed": [
-        "The Great Stoner Rock Movie(2020)"
+        "The Great Stoner Rock Movie(MMXVIII)"
       ],
       "produced": [
-        "The Great Stoner Rock Movie(2020)"
+        "The Great Stoner Rock Movie(MMXVIII)"
       ],
       "acted": [
-        "The Great Stoner Rock Movie(2020)"
+        "The Great Stoner Rock Movie(MMXVIII)"
       ]
     }
   ],
@@ -123,13 +123,13 @@ curl -X POST http://ec2-34-226-248-137.compute-1.amazonaws.com/movies/ -d '{"rel
         "Josh"
       ],
       "directed": [
-        "The Great Stoner Rock Movie(2020)"
+        "The Great Stoner Rock Movie(MMXVIII)"
       ],
       "produced": [
-        "The Great Stoner Rock Movie(2020)"
+        "The Great Stoner Rock Movie(MMXVIII)"
       ],
       "acted": [
-        "The Great Stoner Rock Movie(2020)"
+        "The Great Stoner Rock Movie(MMXVIII)"
       ]
     }
   ]
@@ -143,7 +143,7 @@ url -X PATCH http://ec2-34-226-248-137.compute-1.amazonaws.com/movies/1/ -d '{"r
 {
   "id": 1,
   "title": "The Great Stoner Rock Movie",
-  "release_year": 2020,
+  "release_year": "MMXX",
     .
     .
     .
@@ -158,7 +158,7 @@ curl -X GET http://ec2-34-226-248-137.compute-1.amazonaws.com/movies/1/ -H 'Cont
 {
   "id": 1,
   "title": "The Great Stoner Rock Movie",
-  "release_year": 2020,
+  "release_year": "MMXX",
     .
     .
     .
