@@ -97,22 +97,26 @@ class MoviesTestCase(TestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         data = response.data
         self.assertEqual(data['title'], 'the return of Gonzalo II')
-        self.assertEqual(data['release_year'], 1984)
+        self.assertEqual(data['release_year'], 'MCMLXXXIV')
 
         # create 2 persons:
         first_person_id = self._create_person(
             first_name='Gonzalo', last_name='Almeida', aliases=['the best', 'the worst'])
         second_person_id = self._create_person(first_name='Sebastian', last_name='Norry')
-        data['directors'] = [first_person_id, second_person_id]
-        data['actors'] = [first_person_id, second_person_id]
-        data['producers'] = [first_person_id, second_person_id]
 
         # create new movie with persons in it
+        data = {
+            'title': 'the return of Gonzalo II',
+            'release_year': 1984,
+            'directors': [first_person_id, second_person_id],
+            'actors': [first_person_id, second_person_id],
+            'producers': [first_person_id, second_person_id],
+        }
         response = self.client.post(reverse('movie-list'), data=data, HTTP_AUTHORIZATION="JWT {}".format(self.token))
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         data = response.data
         self.assertEqual(data['title'], 'the return of Gonzalo II')
-        self.assertEqual(data['release_year'], 1984)
+        self.assertEqual(data['release_year'], 'MCMLXXXIV')
 
         # test persons information inside movie response:
         person_fields = ['directors', 'producers', 'actors']
@@ -138,7 +142,7 @@ class MoviesTestCase(TestCase):
         data = response.data
         self.assertEqual(data['id'], movie_id)
         self.assertEqual(data['title'], 'the return of Gonzalo II')
-        self.assertEqual(data['release_year'], 2018)
+        self.assertEqual(data['release_year'], 'MMXVIII')
         self.assertEqual(len(data['directors']), 1)
 
         # DELETE
